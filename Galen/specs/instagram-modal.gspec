@@ -1,0 +1,70 @@
+@set
+    yellow                          "rgba(254, 203, 0, 1)"
+    blue                            "rgba(0, 82, 147, 1)"
+
+@objects
+    #modal
+    modal-wrapper                   css      div.visit-sweden-instagram-wrapper
+    modal-area                      css      div.visit-sweden-instagram-modal
+    modal-close-icon                css      .visit-sweden-instagram-modal .iconscircle-cross
+    modal-right-arrow               css      span.instagram-right
+    modal-left-arrow                css      span.instagram-left
+    modal-image                     css      div.visit-sweden-instagram-modal-image
+
+    #modal description data
+    modal-description               css      div.visit-sweden-instagram-modal-text
+    modal-username                  css      .visit-sweden-instagram-modal-username a
+    modal-likes                     css      .visit-sweden-instagram-item-modal-likes
+    modal-icon-heart                css      .visit-sweden-instagram-modal .icon-heart
+    modal-counter-likes             css      .visit-sweden-instagram-item-modal-likes a
+    modal-text                      css      .visit-sweden-instagram-modal-imagetext p
+
+= Instagram Modal section =
+    modal-area:
+        contains modal-image, modal-description
+        centered horizontally inside modal-wrapper
+
+    modal-close-icon:
+        on top right edge modal-area
+        css color is ${yellow}
+
+    modal-right-arrow:
+        on right edge modal-area
+        aligned horizontally all modal-left-arrow
+        css color is ${yellow}
+        centered vertically inside modal-area
+
+    modal-left-arrow:
+        on left edge modal-area
+        css color is ${yellow}
+        css opacity is "0.3"
+        centered vertically inside modal-area
+
+    modal-image:
+        width 596px
+        left-of modal-description -2 to 0px
+
+    modal-description:
+        width 335px
+        contains modal-username, modal-likes, modal-text
+
+    modal-username:
+        css color is ${blue}
+        above modal-likes
+
+    modal-likes:
+        contains modal-icon-heart, modal-counter-likes
+        below modal-username
+        above modal-text
+
+    modal-icon-heart:
+        css color is ${yellow}
+        left-of modal-counter-likes
+
+    modal-counter-likes:
+        css color is ${blue}
+        right-of modal-icon-heart
+
+    modal-text:
+        css font-family contains "SwedenSans"
+        below modal-likes

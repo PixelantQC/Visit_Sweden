@@ -1,36 +1,68 @@
+@set
+    blue                        "rgba(0, 82, 147, 1)"
+    white                       "rgba(255, 255, 255, 1)"
+    yellow                      "rgba(254, 203, 0, 1)"
+
 @objects
     #social feed
     social-feed                 css      div.tx-pxa-social-feed
-    social-link-*               css      li.social-feed-instagram a
-    social-item-*               css      div.owl-item
-    social-active-item-*        css      div.owl-item.active
-    social-image-*              css      div.social-feed-image-container
-    social-message-*            css      p.social-feed-message
-    social-info-*               css      div.social-feed-information
-    social-date-*               css      span.social-feed-date
-    social-title-*              css      .social-feed-title
+    instagram-grid              css      div.visit-sweden-instagram-grid
+    title-box                   css      div.visit-sweden-title-box
+    left-column                 css      div.visit-sweden-instagram-col-60
+    right-column                css      div.visit-sweden-instagram-col-40
+    left-column-item-*          css      div.visit-sweden-instagram-col-1
+    right-column-item           css      div.visit-sweden-instagram-col-2
+    button-area                 css      div.visit-sweden-instagram-button
+    bottom-button               css      div.visit-sweden-instagram-button a
+
+    #hover effect
+    hover-bar-item              css      div.visit-sweden-instagram-item-meta
+    hover-bar-user              css      span.visit-sweden-instagram-item-meta-user
+    hover-bar-likes             css      span.visit-sweden-instagram-item-meta-likes
+    hover-bar-heart             css      span.visit-sweden-instagram-item-meta-likes .icon-heart
 
 = Social Feed section =
     global:
-        count any social-active-item-* is 4
+        count any right-column-item is 1
 
-    @for [1 - 3] as index
-        social-feed:
-            contains social-item-${index}
+    instagram-grid:
+        contains left-column, right-column, title-box
+        above bottom-button 50px
 
-    social-feed:
-        contains partly social-item-1, social-item-4
+    title-box:
+        centered horizontally inside instagram-grid
 
-    @for [1 - 4] as index
-        social-item-${index}:
-            contains social-image-${index}, social-message-${index}, social-title-${index}
+    left-column:
+        contains left-column-item-*
+        left-of right-column 0 to 3px
+        below title-box 35 to 40px
 
-        social-image-${index}:
-            contains social-info-${index}
+    right-column:
+        contains right-column-item
+        right-of left-column 0 to 3px
+        below title-box 35 to 40px
 
-        social-info-${index}:
-            contains social-date-${index}
+    @for [1 - 2] as index
+        left-column-item-${index}:
+            aligned horizontally all left-column-item-${index+1}
+            aligned vertically all left-column-item-${index+3}
 
-    @for [5 - 8] as index
-        social-item-${index}:
-            absent
+    bottom-button:
+        centered all inside button-area
+        centered horizontally inside social-feed
+
+    hover-bar-item:
+        contains hover-bar-user, hover-bar-likes
+        inside left-column-item-1 0px left right, 0 to 2px bottom
+        css background-color is ${blue}
+
+    hover-bar-user:
+        left-of hover-bar-likes
+        css color is ${white}
+        text contains "visitsweden"
+
+    hover-bar-likes:
+        css color is ${white}
+
+    hover-bar-heart:
+        css color is ${yellow}

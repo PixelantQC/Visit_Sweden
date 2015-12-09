@@ -7,16 +7,17 @@
     #| Tablet     | tablet    | 768x1024  |
     | Desktop    | desktop   | 1280x1024 |
 
+
 @@ parameterized using devices
-@@ groups instagram
+@@ groups feed, hover
 Instagram feed on ${deviceName}
     ${base_url} ${size}
-        #run scripts/hover_on.js
+        run scripts/hover.js
         check specs/instagram-feed.gspec --include ${tags}
 
 @@ parameterized using devices
-@@ groups hover
+@@ groups modal
 Instagram feed on ${deviceName}
     ${base_url} ${size}
-        #run scripts/hover_on.js
-        check specs/hover.gspec --include ${tags}
+        run scripts/modal.js
+        check specs/instagram-modal.gspec --include ${tags}
