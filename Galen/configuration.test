@@ -1,15 +1,22 @@
 @@ set
-  base_url http://samples.galenframework.com/tutorial1/tutorial1.html
+  base_url http://test.de.vs.typo3konsult.se/index.php?id=980
 
 @@ table devices
     | deviceName | tags      | size      |
     #| Mobile     | mobile    | 360x640   |
-    | Tablet     | tablet    | 768x1024  |
-    #| Desktop    | desktop   | 1280x1024 |
+    #| Tablet     | tablet    | 768x1024  |
+    | Desktop    | desktop   | 1280x1024 |
 
 @@ parameterized using devices
-@@ groups default
-Home Page on ${deviceName}
+@@ groups instagram
+Instagram feed on ${deviceName}
     ${base_url} ${size}
-        #run scripts/login-template.js
-        check specs/home-page.gspec --include ${tags}
+        #run scripts/hover_on.js
+        check specs/instagram-feed.gspec --include ${tags}
+
+@@ parameterized using devices
+@@ groups hover
+Instagram feed on ${deviceName}
+    ${base_url} ${size}
+        #run scripts/hover_on.js
+        check specs/hover.gspec --include ${tags}

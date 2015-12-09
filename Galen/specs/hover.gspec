@@ -1,0 +1,29 @@
+@objects
+    #social feed
+    social-feed                 css      div.tx-pxa-social-feed
+    social-link-*               css      li.social-feed-instagram a
+    social-item-*               css      div.owl-item
+    social-active-item-*        css      div.owl-item.active
+    social-image-*              css      div.social-feed-image-container
+    social-message-*            css      p.social-feed-message
+    social-info-*               css      div.social-feed-information
+    social-date-*               css      span.social-feed-date
+    social-title-*              css      .social-feed-title
+
+= Social Feed section =
+    global:
+        count any social-active-item-* is 4
+
+    @for [1 - 4] as index
+        social-item-${index}:
+            contains social-image-${index}, social-message-${index}, social-title-${index}
+
+        social-image-${index}:
+            contains social-info-${index}
+
+        social-info-${index}:
+            contains social-date-${index}
+
+    @for [5 - 8] as index
+        social-item-${index}:
+            absent
