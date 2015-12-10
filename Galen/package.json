@@ -6,8 +6,8 @@
     "hover": "galen test configuration.test --htmlreport reports --groups hover",
     "modal": "galen test configuration.test --htmlreport reports --groups modal",
     "bs-all": "galen test browserstack-configuration.test --htmlreport browserstack_reports",
-    "report": "test -d ~/Dropbox/AutomatedTests/Project/$(date +%Y-%m-%d)/Layout || mkdir -p ~/Dropbox/AutomatedTests/Project/$(date +%Y-%m-%d)/Layout && cp -R reports ~/Dropbox/AutomatedTests/Project/$(date +%Y-%m-%d)/Layout",
-    "bs-report": "test -d ~/Dropbox/AutomatedTests/Project/$(date +%Y-%m-%d)/Layout || mkdir -p ~/Dropbox/AutomatedTests/Project/$(date +%Y-%m-%d)/Layout && cp -R browserstack_reports ~/Dropbox/AutomatedTests/Project/$(date +%Y-%m-%d)/Layout"
+    "report": "test -d ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Layout || mkdir -p ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Layout && cp -R reports ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Layout",
+    "bs-report": "test -d ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Layout || mkdir -p ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Layout && cp -R browserstack_reports ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Layout"
   },
   "license": "ISC"
 }

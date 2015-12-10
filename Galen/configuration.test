@@ -10,14 +10,14 @@
 
 @@ parameterized using devices
 @@ groups feed, hover
-Instagram feed on ${deviceName}
+Instagram feed with hover on ${deviceName}
     ${base_url} ${size}
         run scripts/hover.js
         check specs/instagram-feed.gspec --include ${tags}
 
 @@ parameterized using devices
 @@ groups modal
-Instagram feed on ${deviceName}
+Instagram modal window on ${deviceName}
     ${base_url} ${size}
         run scripts/modal.js
         check specs/instagram-modal.gspec --include ${tags}
