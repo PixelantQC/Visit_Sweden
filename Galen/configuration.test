@@ -1,5 +1,6 @@
 @@ set
   base_url http://test.de.vs.typo3konsult.se/index.php?id=980
+  mikkel_url http://felayout_visitsweden.testserver.pixelant.nu/visitswedeninstagram.html
 
 @@ table devices
     | deviceName | tags      | size      |

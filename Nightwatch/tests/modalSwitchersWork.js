@@ -17,9 +17,9 @@ var disabledRightArrow = '.instagram-right.disabled';
 // Tests
 
 module.exports = {
-  'Click first istagram item' : function (browser) {
+  'Click first instagram item' : function (browser) {
     browser
-      .url(browser.globals.url)
+      .url(browser.globals.urlMikkel)
       .maximizeWindow()
       .waitForElementVisible(instagramFeed, 1000, 'Instagram feed is visible on a page?')
       .click(feedFirstItem)

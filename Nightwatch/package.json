@@ -7,8 +7,11 @@
   "scripts": {
     "all": "nightwatch --reporter ./scripts/html-reporter.js",
     "switchers": "nightwatch -t tests/modalSwitchersWork.js --reporter ./scripts/html-reporter.js",
-    "close": "nightwatch -t tests/closeModalWindow.js --reporter ./scripts/html-reporter.js",
+    "icon-close": "nightwatch -t tests/closeModalWithIcon.js --reporter ./scripts/html-reporter.js",
+    "click-close": "nightwatch -t tests/closeModalWithIcon.js --reporter ./scripts/html-reporter.js",
+    "links": "nightwatch -t tests/linksWork.js --reporter ./scripts/html-reporter.js",
     "bs-all": "nightwatch -e default,firefox -c nightwatch-browserstack.json --reporter ./scripts/html-browserstack-reporter.js",
+    "bs-close": "nightwatch -t tests/closeModalWithIcon.js -e firefox -c nightwatch-browserstack.json --reporter ./scripts/html-browserstack-reporter.js",
     "report": "test -d ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Functional || mkdir -p ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Functional && cp -R reports ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Functional",
     "bs-report": "test -d ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Functional || mkdir -p ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Functional && cp -R browserstack_reports ~/Dropbox/AutomatedTests/VisitSweden/$(date +%Y-%m-%d)/Functional"
   },

@@ -41,7 +41,7 @@
         "browser_version" : "42.0",
         "os" : "OS X",
         "os_version" : "El Capitan",
-        "resolution" : "1280x1024",
+        "resolution" : "1600x1200",
         "javascriptEnabled": true,
         "acceptSslCerts": true,
         "browserstack.user": "${BROWSERSTACK_USER}",
